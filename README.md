@@ -1,2 +1,2 @@
-# game jam
-## childhood
+# Game Jam
+## Childhood
