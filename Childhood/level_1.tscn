@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7ttb4vaascng"]
+
+[ext_resource type="PackedScene" uid="uid://bq08onapfbdpe" path="res://enemy.tscn" id="1_0vv2p"]
+[ext_resource type="Script" path="res://level_1.gd" id="1_jv1t3"]
+[ext_resource type="PackedScene" uid="uid://dogtxdk2s72og" path="res://happy.tscn" id="2_uy5b3"]
+[ext_resource type="PackedScene" uid="uid://dry758nx5p23p" path="res://player.tscn" id="3_3gnqx"]
+[ext_resource type="Script" path="res://Label.gd" id="5_365je"]
+
+[node name="level1" type="Node"]
+script = ExtResource("1_jv1t3")
+
+[node name="enemy" parent="." instance=ExtResource("1_0vv2p")]
+position = Vector2(88, 104)
+
+[node name="happy" parent="." instance=ExtResource("2_uy5b3")]
+position = Vector2(200, 134)
+
+[node name="happy3" parent="." instance=ExtResource("2_uy5b3")]
+position = Vector2(234, 259)
+
+[node name="happy2" parent="." instance=ExtResource("2_uy5b3")]
+position = Vector2(101, 182)
+
+[node name="player" parent="." instance=ExtResource("3_3gnqx")]
+position = Vector2(335, 113)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 68.0
+offset_right = 248.0
+offset_bottom = 108.0
+script = ExtResource("5_365je")
+
+[connection signal="body_entered" from="enemy" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="happy" to="happy" method="_on_body_entered"]
+[connection signal="body_entered" from="happy" to="player" method="_on_happy_body_entered"]
+[connection signal="body_entered" from="happy3" to="happy3" method="_on_body_entered"]
+[connection signal="body_entered" from="happy3" to="player" method="_on_happy_body_entered"]
+[connection signal="body_entered" from="happy2" to="happy2" method="_on_body_entered"]
+[connection signal="body_entered" from="happy2" to="player" method="_on_happy_body_entered"]
+[connection signal="number_of_happy" from="player" to="." method="_on_player_number_of_happy"]
+[connection signal="number_of_happy" from="player" to="Label" method="_on_player_number_of_happy"]
+[connection signal="player_posiation" from="player" to="enemy" method="_on_player_player_posiation"]

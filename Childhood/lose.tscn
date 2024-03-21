@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b31ymopf1ikho"]
+
+[ext_resource type="Texture2D" uid="uid://dy7vjln3e31mq" path="res://game over.png" id="1_friba"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(629, 356)
+scale = Vector2(0.588785, 0.497537)
+texture = ExtResource("1_friba")
